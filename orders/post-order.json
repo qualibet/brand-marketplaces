@@ -33,10 +33,9 @@
     {
       "item_id": "string", //required - marketplace item_id
       "item_id_addition": "string", //optional - secondary marketplace item_id
-      "sku": "string", // required - sku from the qualibet system
       "title": "string", //optional - productname
       "image": "string", //optional - productimage
-      "gtin": "string", //optional - product EAN
+      "ean": "string", //optional - product EAN
       "tax_value": 0,  //required - e.g. 19 // 7
       "quantity": 0, //required - number of lines for given item
       "selling_price": 0, //required
