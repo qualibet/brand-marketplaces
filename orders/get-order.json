@@ -48,7 +48,7 @@
   ],
   "shippings": [
     {
-      "id": 12345, //qualibet return id
+      "id": 12345, //qualibet shipping id
       "date": "2019-11-07 14:20:00",
       "lines": [
         //all lines included in the parcel
@@ -56,24 +56,22 @@
         16,
         17
       ],
-      "documents": {
-        "return_label": "path.to.label",
-        "shipping_label": "path.to.label",
-        "delivery_note": "path.to.delivery_note",
-        "return_note": "path.to.return_note",
-        "return_information": "path.to.return_information",
-      }
+      "shipping_tracking_code": "abc",
+      "return_tracking_code": "abc",
+      "carrier": "DHL",
     }
   ],
   "returns": [
     {
       "id": 12345, //qualibet return id
+      "line_id": 123,
       "date": "2019-11-07 14:20:00"
     }
   ],
   "cancellations": [
     {
-      "id": 12345, //qualibet return id
+      "id": 12345, //qualibet cancellation id
+      "line_id": 123,
       "date": "2019-11-07 14:20:00"
     }
   ]
