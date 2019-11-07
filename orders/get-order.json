@@ -1,1 +1,67 @@
-{}
+{
+  "current_page": 0,
+  "last_page": 0,
+  "per_page": 0,
+  "from": 0,
+  "to": 0,
+  "total": 0,
+  "data": [
+    {
+      "order_id": 1, // Qualibet Order ID
+      "ext_order_id": "47-111", //Marketplace OrderId
+      "ext_order_id_addition": "47-111", //secondary-marketplace OrderId (If provided)
+      "status": "open", //Order Status (enum: initial, approved, fulfilled)
+      "payment_method": "string", //if provided - salesChannelName will be displayed otherwise
+      "order_total": 0,
+      "number_of_items": 0, //total number of items to be shipped (itembased - not line based)
+      "customer_comment": "string",
+      "customer_id": "string",
+      "customer_email": "string",
+      "customer_phone_number": "string",
+      "delivery_gender": "string",
+      "delivery_first_name": "string",
+      "delivery_last_name": "string",
+      "delivery_address_line_1": "Somestreet 69 || Packstation 133 || Postfiliale 377",
+      "delivery_address_line_2": "Somecompany || 133742069",
+      "delivery_address_line_3": "string",
+      "delivery_zip_code": "string",
+      "delivery_city": "string",
+      "delivery_country": "DE",
+      "billing_gender": "string",
+      "billing_first_name": "string",
+      "billing_last_name": "string",
+      "billing_address_line_1": "somestreet 69",
+      "billing_address_line_2": "string",
+      "billing_zip_code": "string",
+      "billing_city": "string",
+      "billing_country": "DE",
+      "currency": "EUR",
+      "order_date": "2017-10-31 14:20:00",
+      "sales_channel": "schuhede", //<@TODO: MAYBE NOT NEEDED>
+      "items": [
+        {
+          "item_id": 1, //Qualibet itemId
+          "ext_item_id": "abc123", //marketplace item id
+          "ext_item_id_addition": "13545435abc", //secondary item id if provided
+          "sku": "string", //Qualibet SKU
+          "product_name": "adidas 1337",
+          "description": "string",
+          "image": "http://st1.schuhe.de/imgdb/img/_fuv/13012/cache/13012-zoom-04.jpg",
+          "shipping_price": 0,
+          "selling_price": 0,
+          "quantity": 1,
+          "final_price": 0,
+          "discount": 0,
+          "lines": [
+            {
+              "line_id": 1,
+              "ext_line_id": "asdasd34434", //marketplace line id
+              "position": 0,
+              "item_price": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

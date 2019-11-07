@@ -20,10 +20,12 @@ sicher, dass die Status-Updates die von Qualibet gemeldet werden entgegengenomme
 
     1. Bestellungen die auf dem Marktplatz der Marke entstehen werden über den Webservice bei qualibet gemeldet
     
-    2. Jede aktualisierung der Bestellung (Versendung, Retoure, Storno) werden von Qualibet per Webhook
+    2. Reservierte Bestellungen müssen geupdated werden, sobald diese bezahlt sind und versendet werden dürfen.
+    
+    3. Jede aktualisierung der Bestellung (Versendung, Retoure, Storno) werden von Qualibet per Webhook
        an die Marke gemeldet. Der Webhook meldet die order_id die aktualisiert wurde.
 
-    3. Die Marke kann jederzeit über den Webservice die aktuellen Daten und Status der Bestellung
+    4. Die Marke kann jederzeit über den Webservice die aktuellen Daten und Status der Bestellung
        abrufen. Mit jeder Meldung von Qualibet muss die Marke den aktuellen Status der Bestellung
        für sich aktualisieren.
        
@@ -41,8 +43,12 @@ Die Authentifizierung wird im Header mit einem Token durchgeführt.
     
     2. Bestellungen müssen über den POST https://brand-mp.qb-staging.de/v1/orders gemeldet werden.
        => orders/post-order.json
+       
+    3. Bestellungen, die als reserviert angelegt wurden, müssen über einen PATCH-Call als storniert bzw. 
+       für den Versandt freigegeben werden.
+       => orders/patch-order.json
 
-    3. Der Status der Bestellung kann jederzeit über GET https://brand-mp.qb-staging.de/v1/orders/{order_id} 
+    4. Der Status der Bestellung kann jederzeit über GET https://brand-mp.qb-staging.de/v1/orders/{order_id} 
        abgerufen werden. Nach einem Webhook muss von der Marke der aktuelle Status abgeholt werden.
        => orders/get-order.json
           
