@@ -1,1 +1,78 @@
-{}
+{
+  "order_id": "47-111",
+  "order_id_addition": "47-111",
+  "status": "initial",
+  "transitions": [
+    //all status changes of the order. Sorted by date
+    {
+      /*
+        Possible transitions:
+        initial - order is reserved and cannot be shipped
+        approved - order is ready to be shipped
+        mp_cancellation - marketplace cancelled the order
+        fulfilled - all lines have either been shipped or cancelled
+        cancelled - all lines have been cancelled
+      */
+      "transition": "initial",
+      "date": "2019-11-07 14:20:00"
+    }
+  ],
+  "items": [
+    {
+      "item_id": "abc123",
+      "item_id_addition": "13545435abc",
+      "ean": "4056828889477",
+      "lines": [
+        {
+          "line_id": 1,
+          "position": 1,
+          "status": "initial",
+          "transitions": [
+            //all status changes of the line. Sorted by date
+            {
+              /*
+                Possible transitions:
+                initial - line is neither shipped nor cancelled
+                shipped - line has been shipped
+                returned - line has been returned
+                cancelled - line has been cancelled
+                customer_cancellation - line has been cancelled by request of the customer
+              */
+              "transition": "initial",
+              "date": "2019-11-07 14:20:00"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "shippings": [
+    {
+      "id": 12345, //qualibet shipping id
+      "date": "2019-11-07 14:20:00",
+      "lines": [
+        //all lines included in the parcel
+        15,
+        16,
+        17
+      ],
+      "shipping_tracking_code": "abc",
+      "return_tracking_code": "abc",
+      "carrier": "DHL",
+    }
+  ],
+  "returns": [
+    {
+      "id": 12345, //qualibet return id
+      "line_id": 123,
+      "date": "2019-11-07 14:20:00"
+    }
+  ],
+  "cancellations": [
+    {
+      "id": 12345, //qualibet cancellation id
+      "line_id": 123,
+      "date": "2019-11-07 14:20:00"
+    }
+  ]
+}

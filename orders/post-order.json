@@ -1,1 +1,52 @@
-{}
+{
+  "order_id": "string", //required - marketplace order_id
+  "order_id_addition": "string", //optional - secondary marketplace id
+  "order_date": "2018-12-20 13:37:12", //required - FROMAT: YYYY-MM-DD HH:ii:ss
+  "status": "initial", // required - ENUM: initial (reserved), approved (ready to ship), mp_cancellation (cancelled by marketplace)
+  "payment_method": "string", //optional
+  "currency": "EUR", //optional
+  "order_total": 0.00, //required - total cost of all items
+  "number_of_items": 0, //required - total amount of items in order
+  "customer_comment": "string", //optional
+  "customer_id": "string", //required
+  "customer_email": "string", //optional
+  "customer_phone_number": "string",//optional
+  "delivery_gender": "string", //optional
+  "delivery_first_name": "string", //required
+  "delivery_last_name": "string", //required
+  "delivery_address": "Somestreet 69 || Packstation 133 || Postfiliale 377", //required - street / housenumber or packingstation or postoffice
+  "delivery_company": "Somecompany", //optional
+  "delivery_addition": "133742069", //optional (required if packstation/postfiliale is send in delivery_address)
+  "delivery_zip_code": "string", //required
+  "delivery_city": "string", //required
+  "delivery_country": "DE", //required - two letter country code
+  "billing_gender": "string", //optional
+  "billing_first_name": "string", //optional
+  "billing_last_name": "string",//optional
+  "billing_address": "somestreet 69", //optional
+  "billing_company": "string", //optional
+  "billing_zip_code": "string", //optional
+  "billing_city": "string", //optional
+  "billing_country": "DE", //optional
+  "items": [
+    {
+      "item_id": "string", //required - marketplace item_id
+      "item_id_addition": "string", //optional - secondary marketplace item_id
+      "title": "string", //optional - productname
+      "image": "string", //optional - productimage
+      "ean": "string", //required - product EAN
+      "tax_value": 0.00,  //required - e.g. 19.00 // 7.00
+      "quantity": 0, //required - number of lines for given item
+      "selling_price": 0.00, //required - price of single unit
+      "final_price": 0.00, //required - sellingprice * quantity
+      "shipping_price": 0.00, //optional
+      "lines": [
+        {
+          "line_id": "string", //required - marketplace line id
+          "position": 1, //required - count from 1 to n where n is the item quantity
+          "item_price": 0.00, //required
+        }
+      ]
+    }
+  ]
+}
